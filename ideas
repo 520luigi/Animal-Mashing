@@ -1,0 +1,22 @@
+ideas for the game
+
+-add a bar graph design, whoever hits buttons the fastest hits the top bar....
+-add different colors (1-4 players (maybe))
+-add sounds, graphic display of who won!
+-add "welcome to button smasher yah! who will be the champion of this button smashing game! is it you? or You or YOU!!!"
+-create something fun and everything else will follow, focus will follow, enjoyment of life will follow...
+
+
+-get key pressed and held to not count... (cannot have held keys to count for the game loop)
+
+-why do i even need to use bar graphs lol! Use fun images like animal portraits or sprite spaceships or something fun!
+-need to work on
+    *who won, let the message poop out who won!
+    *add sounds per click, winners,
+    #add a starting menu, graphics must look good (make one in photoshop!)...add start menu music that loops...
+
+-best of 3 to see who the winner is..
+-add count down of when to begin: perhaps use a time delay while the music sounds of 3, 2, 1, Begin... (and add visual image, then clear window...)
+
+intro music used:
+https://opengameart.org/content/frozen-jam-seamless-loop
