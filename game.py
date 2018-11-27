@@ -21,11 +21,11 @@ green = (0, 255, 0)
 black = (0, 0, 0)
 white = (255, 255, 255)
 
-#display width and height made to the background image resolution
+#Display width and height made to the background image resolution
 display_width = 736
 display_height = 600
 
-#set finish line to be fraction of window height and increments per key pressed
+#Set finish line to be fraction of window height and increments per key pressed
 finish_line = display_height/13
 increment = 10
 
@@ -44,7 +44,7 @@ startup_image = pygame.image.load("graphics/startmenu.png").convert()
 p1_wins = pygame.image.load("graphics/p1win.png").convert_alpha()
 p2_wins = pygame.image.load("graphics/p2win.png").convert_alpha()
 
-#initialize sounds for player clicks, winner, players, intro countdown, etc
+#Initialize sounds for player clicks, winner, players, intro countdown, etc
 bg_music = pygame.mixer.Sound("sounds/FrozenJam.ogg")
 bg_music.set_volume(0.4)
 p1_click = pygame.mixer.Sound("sounds/jingle1.ogg")
@@ -68,40 +68,24 @@ def change_animal():
 
     player1_animal = random.choice(animals)
     player2_animal = random.choice(animals)
-    #prevent players from having the same animal
+    #Prevent players from having the same animal
     while player1_animal == player2_animal:
          player2_animal = random.choice(animals)
-
-    # Load and set up players animal.
+    #Load and set up players animal
     player1_image = pygame.image.load(player1_animal).convert()
     player1_image.set_colorkey(black)
     player2_image = pygame.image.load(player2_animal).convert()
     player2_image.set_colorkey(black)
     return (player1_image, player2_image)
 
-def set_position(): #add input of value 2-4, if statements to set up players...
-    #players locations stored in arrays
+def set_position():
+    #Players location stored in arrays
     x = [display_width/3, display_width * 0.61]
     y = [display_height * 2/3 - 20, display_height * 2/3 - 20]
     return (x[0], y[0], x[1], y[1])
 
-def draw_text(window, text, size, x, y):
-    font_name = pygame.font.match_font('arial')
-    font = pygame.font.Font(font_name, size)
-    text_surface = font.render(text, True, red)
-    text_rect = text_surface.get_rect()
-    text_rect.midtop = (x, y)
-    window.blit(text_surface, text_rect)
-
 def show_victory_screen(message, sound_number):
-    #screen, title, size, x, y
-    #win.fill(white) #change to a cooler background maybe...or dont even use this...
-    # draw_text(win, "WINNER!", 88, display_width/2, display_height/4)
-    # draw_text(win, message, 80, display_width/2,
-    #     display_height/2)
-    #
-    # draw_text(win, "<ESCAPE> Return to Main Menu", 18,
-    #     display_width/2, display_height * 3/4)
+    #Show victory screen and play the sounds according to who won
     winner_sound.play()
     pygame.time.delay(2000)
     if sound_number == 1:
@@ -122,31 +106,28 @@ def show_victory_screen(message, sound_number):
                     game_intro(win, display_width, display_height)
 
 def game_intro(win, width, height):
-
+    #Game intro which loops with music and goes into game countdown
     intro = True
-    #use this to put the start menu onto the window
     win.blit(startup_image, img_pos)
-    #play background music and loop it
     bg_music.play(loops=-1)
     while intro:
         for event in pygame.event.get():
-            #print (event) #this prints the event to the terminal for checking
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     bg_music.stop()
-                    # prepare_yourself.play()
-                    # pygame.time.delay(2000)
-                    # three.play()
-                    # pygame.time.delay(1000)
-                    # two.play()
-                    # pygame.time.delay(1000)
-                    # one.play()
-                    # pygame.time.delay(1000)
-                    # begin.play()
-                    # pygame.time.delay(1000)
+                    prepare_yourself.play()
+                    pygame.time.delay(1888)
+                    three.play()
+                    pygame.time.delay(788)
+                    two.play()
+                    pygame.time.delay(788)
+                    one.play()
+                    pygame.time.delay(788)
+                    begin.play()
+                    pygame.time.delay(788)
                     game_loop()
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
@@ -154,23 +135,20 @@ def game_intro(win, width, height):
         pygame.display.update()
 
 def game_loop():
-    #use this to put the background image to the window and clear start menu
+    #Use this to put the background image to the window and clear start menu
     win.blit(bg_image, img_pos)
-    #deletes all the keypresses before game start bug
+    #Deletes all the keypresses before game start bug
     pygame.event.get()
-    #change animal for players every game loop and reset position
+    #Change animal for players every game loop and reset position
     p1_img, p2_img = change_animal()
     x1, y1, x2, y2 = set_position()
 
     pygame.display.update()
-    #add intro sounds before the game begins...
-
 
     running = True
     game_over = False
     while running:
-
-        #put the animal pictures onto the screen many times after increments!!
+        #Put the animal pictures onto the screen many times after increments!!
         win.blit(p1_img, (x1, y1))
         win.blit(p2_img, (x2, y2))
         pygame.display.update()
@@ -204,4 +182,3 @@ def game_loop():
                     game_over = True
                     break
 game_intro(win, display_width, display_height)
-#game_loop(win, bg_img, img_pos, p1_click, p2_click, winner_sound, p1_sound, p2_sound)
