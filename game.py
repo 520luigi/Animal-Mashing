@@ -41,6 +41,8 @@ img_pos = [0, 0]
 #Load and set up background image and startup menu
 bg_image = pygame.image.load("graphics/bgimage.png").convert()
 startup_image = pygame.image.load("graphics/startmenu.png").convert()
+p1_wins = pygame.image.load("graphics/p1win.png").convert_alpha()
+p2_wins = pygame.image.load("graphics/p2win.png").convert_alpha()
 
 #initialize sounds for player clicks, winner, players, intro countdown, etc
 bg_music = pygame.mixer.Sound("sounds/FrozenJam.ogg")
@@ -49,9 +51,10 @@ p1_click = pygame.mixer.Sound("sounds/jingle1.ogg")
 p1_click.set_volume(0.4)
 p2_click = pygame.mixer.Sound("sounds/jingle2.ogg")
 p2_click.set_volume(0.4)
-winner_sound = pygame.mixer.Sound("sounds/winner.ogg")
+winner_sound = pygame.mixer.Sound("sounds/flawless_victory.ogg")
 p1_sound = pygame.mixer.Sound("sounds/player_1.ogg")
 p2_sound = pygame.mixer.Sound("sounds/player_2.ogg")
+prepare_yourself = pygame.mixer.Sound("sounds/prepare_yourself.ogg")
 one = pygame.mixer.Sound("sounds/1.ogg")
 two = pygame.mixer.Sound("sounds/2.ogg")
 three = pygame.mixer.Sound("sounds/3.ogg")
@@ -93,18 +96,21 @@ def draw_text(window, text, size, x, y):
 def show_victory_screen(message, sound_number):
     #screen, title, size, x, y
     #win.fill(white) #change to a cooler background maybe...or dont even use this...
-    draw_text(win, "WINNER!", 88, display_width/2, display_height/4)
-    draw_text(win, message, 80, display_width/2,
-        display_height/2)
-    draw_text(win, "<ESCAPE> Return to Main Menu", 18,
-        display_width/2, display_height * 3/4)
-    pygame.display.flip()
+    # draw_text(win, "WINNER!", 88, display_width/2, display_height/4)
+    # draw_text(win, message, 80, display_width/2,
+    #     display_height/2)
+    #
+    # draw_text(win, "<ESCAPE> Return to Main Menu", 18,
+    #     display_width/2, display_height * 3/4)
     winner_sound.play()
-    pygame.time.delay(1200)
+    pygame.time.delay(2000)
     if sound_number == 1:
+        win.blit(p1_wins, img_pos)
         p1_sound.play()
     elif sound_number == 2:
+        win.blit(p2_wins, img_pos)
         p2_sound.play()
+    pygame.display.flip()
     waiting = True
     while waiting:
         for event in pygame.event.get():
@@ -131,14 +137,16 @@ def game_intro(win, width, height):
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     bg_music.stop()
-                    three.play()
-                    pygame.time.delay(1000)
-                    two.play()
-                    pygame.time.delay(1000)
-                    one.play()
-                    pygame.time.delay(1000)
-                    begin.play()
-                    pygame.time.delay(1000)
+                    # prepare_yourself.play()
+                    # pygame.time.delay(2000)
+                    # three.play()
+                    # pygame.time.delay(1000)
+                    # two.play()
+                    # pygame.time.delay(1000)
+                    # one.play()
+                    # pygame.time.delay(1000)
+                    # begin.play()
+                    # pygame.time.delay(1000)
                     game_loop()
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
