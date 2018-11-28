@@ -13,6 +13,10 @@ Run the commands to compile the game in the terminal. Make sure you have python 
 ```
 python game.py
 ```
+If you don't have pygame use the following code to install it
+```
+pip install --user pygame
+```
 ---
 MIT License
 
