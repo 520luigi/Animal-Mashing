@@ -33,7 +33,7 @@ increment = 10
 win = pygame.display.set_mode((display_width, display_height))
 
 #Display the caption on top of pygame window top banner
-pygame.display.set_caption("Button Smashers!")
+pygame.display.set_caption("Animal Mashing")
 
 #Set positions of background image, startup menu to the top left corner
 img_pos = [0, 0]

@@ -13,6 +13,7 @@ Run the commands to compile the game in the terminal. Make sure you have python 
 ```
 python game.py
 ```
+---
 MIT License
 
 Copyright (c) 2018 Luigi Zheng
