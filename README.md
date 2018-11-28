@@ -56,6 +56,7 @@ Lastly, run the following code.
 pyinstaller --onefile Animal-Mashing.spec
 ```
 The executable will come out in the dist folder. It should work by itself. 
+
 ---
 MIT License
 
