@@ -22,7 +22,7 @@ a.datas += [
             ('graphics/duck.png', '/Users/xx/Animal-Mashing/graphics/duck.png', 'graphics'),
             ('graphics/elephant.png', '/Users/xx/Animal-Mashing/graphics/elephant.png', 'graphics'),
             ('graphics/hippo.png', '/Users/xx/Animal-Mashing/graphics/hippo.png', 'graphics'),
-            ('graphics/hourse.png', '/Users/xx/Animal-Mashing/graphics/horse.png', 'graphics'),
+            ('graphics/horse.png', '/Users/xx/Animal-Mashing/graphics/horse.png', 'graphics'),
             ('graphics/p1win.png', '/Users/xx/Animal-Mashing/graphics/p1win.png', 'graphics'),
             ('graphics/p2win.png', '/Users/xx/Animal-Mashing/graphics/p2win.png', 'graphics'),
             ('graphics/parrot.png', '/Users/xx/Animal-Mashing/graphics/parrot.png', 'graphics'),
