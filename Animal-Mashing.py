@@ -106,7 +106,7 @@ def show_victory_screen(message, sound_number):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit()
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     game_intro(win, display_width, display_height)
@@ -120,7 +120,7 @@ def game_intro(win, width, height):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit()
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     bg_music.stop()
@@ -137,7 +137,7 @@ def game_intro(win, width, height):
                     game_loop()
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
-                    exit()
+                    sys.exit()
         pygame.display.update()
 
 def game_loop():
@@ -175,7 +175,7 @@ def game_loop():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit()
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LSHIFT and y1 > finish_line:
                     y1 -= increment
