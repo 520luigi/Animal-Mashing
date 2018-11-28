@@ -17,6 +17,45 @@ If you don't have pygame use the following code to install it
 ```
 pip install --user pygame
 ```
+To make the executable, we use pyinstaller.
+First run the following code to make the spec file
+```
+pyi-makespec --onefile Animal-Mashing.py
+```
+Next, add this code into the spec file after the 'a'. This is to add the resources to the executable library.
+```
+a.datas += [
+            ('graphics/bgimage.png', './graphics/bgimage.png', 'graphics'),
+            ('graphics/chick.png', './graphics/chick.png', 'graphics'),
+            ('graphics/duck.png', './graphics/duck.png', 'graphics'),
+            ('graphics/elephant.png', './graphics/elephant.png', 'graphics'),
+            ('graphics/hippo.png', './graphics/hippo.png', 'graphics'),
+            ('graphics/hourse.png', './graphics/horse.png', 'graphics'),
+            ('graphics/p1win.png', './graphics/p1win.png', 'graphics'),
+            ('graphics/p2win.png', './graphics/p2win.png', 'graphics'),
+            ('graphics/parrot.png', './graphics/parrot.png', 'graphics'),
+            ('graphics/penguin.png', './graphics/penguin.png', 'graphics'),
+            ('graphics/pig.png', './graphics/pig.png', 'graphics'),
+            ('graphics/startmenu.png', './graphics/startmenu.png', 'graphics'),
+            ('graphics/whale.png', './graphics/whale.png', 'graphics'),
+            ('sounds/1.ogg', './sounds/1.ogg', 'sounds'),
+            ('sounds/2.ogg', './sounds/2.ogg', 'sounds'),
+            ('sounds/3.ogg', './sounds/3.ogg', 'sounds'),
+            ('sounds/begin.ogg', './sounds/begin.ogg', 'sounds'),
+            ('sounds/flawless_victory.ogg', './sounds/flawless_victory.ogg', 'sounds'),
+            ('sounds/FrozenJam.ogg', './sounds/FrozenJam.ogg', 'sounds'),
+            ('sounds/jingle1.ogg', './sounds/jingle1.ogg', 'sounds'),
+            ('sounds/jingle2.ogg', './sounds/jingle2.ogg', 'sounds'),
+            ('sounds/player_1.ogg', './sounds/player_1.ogg', 'sounds'),
+            ('sounds/player_2.ogg', './sounds/player_2.ogg', 'sounds'),
+            ('sounds/prepare_yourself.ogg', './sounds/prepare_yourself.ogg', 'sounds')
+           ]
+```
+Lastly, run the following code.
+```
+pyinstaller --onefile Animal-Mashing.spec
+```
+The executable will come out in the dist folder. It should work by itself. 
 ---
 MIT License
 
