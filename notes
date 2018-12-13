@@ -8,5 +8,9 @@ This is a  looping screen indicates the number of rounds out of 3!
 2. More than 2 players.
 Make option for players to choose from number of players 2 to 4, or give 3 choices of 2, 3, or 4 players. Specify controls for these 4 players.
 
-3. Control display visibility, tell players the control location. 
+3. Control display visibility, tell players the control location.
 
+4. find a way to use properly use pyinstaller so that I can add an icon to executable without adding an invis file. Also make it so that a console
+   window doesn't open up when I click on executable. I tried modifying the spec file and using the command:
+                pyinstaller --onefile --noconsole --icon=<icon absolute path>exe.icns Animal-Mashing.spec
+        (But this doesn't work.....lol)
