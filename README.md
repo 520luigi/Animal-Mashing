@@ -17,7 +17,7 @@ If you don't have pygame use the following code to install it
 ```
 pip install --user pygame
 ```
-To make the executable, we use pyinstaller.
+To make the executable, we use pyinstaller. Make sure you have it installed as well.
 First run the following code to make the spec file
 ```
 pyi-makespec --onefile Animal-Mashing.py
